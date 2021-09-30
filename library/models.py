@@ -1,5 +1,12 @@
 from django.db import models
 
+class Scores(models.Model):
+    username = models.CharField(max_length=500)
+    score = models.FloatField()
+
+    def __str__(self):
+        return f'{self.username} {self.score}'
+
 class Author(models.Model):
     name = models.CharField(max_length=170)
 

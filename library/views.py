@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Book
+from .models import Scores, Book
+
+def users(request):
+    data = {'users': Scores.objects.all()}
+    print(data)
+    return render(request, './users.html', data)
 
 def home(request):
     data = {'books': Book.objects.all()}
-    print(Book.objects.all())
     return render(request, './home.html', data)
 
 def book(request, id):
