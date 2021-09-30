@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Welcome to the library</h1>
+    <h2>Here are the currently available books:</h2>
+
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{% url 'library-home' id=book.id %}">{{book.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+{% endblock content %}
